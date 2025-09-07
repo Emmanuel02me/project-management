@@ -13,13 +13,18 @@ public class UserMapper {
         dto.setId(user.getId());
         dto.setName(user.getName());
         dto.setEmail(user.getEmail());
+        dto.setPassword(user.getPassword());
+        dto.setProgram(user.getProgram());
+        dto.setProjectTitle(user.getProjectTitle());
         dto.setRole(user.getRole() != null ? user.getRole().name() : null);
 
-        if (user.getProgram() != null) {
+      /*  if (user.getProgram() != null) {
             dto.setProgramId(user.getProgram().getId());
             dto.setProgramName(user.getProgram().getName());
         }
 
+
+       */
         return dto;
     }
 
@@ -30,6 +35,9 @@ public class UserMapper {
         user.setId(dto.getId());
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
+        user.setProgram(dto.getProgram());
+        user.setProjectTitle(dto.getProjectTitle());
 
         if (dto.getRole() != null) {
             try {
@@ -40,12 +48,14 @@ public class UserMapper {
             }
         }
 
-        if (dto.getProgramId() != null) {
+       /* if (dto.getProgramId() != null) {
             Program program = new Program();
             program.setId(dto.getProgramId());
             user.setProgram(program);
         }
 
+
+        */
         return user;
     }
 }

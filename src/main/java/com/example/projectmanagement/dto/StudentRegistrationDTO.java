@@ -1,13 +1,12 @@
 package com.example.projectmanagement.dto;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class LoginRequest {
-    @NotNull
+public class StudentRegistrationDTO {
+    private String name;
     private String email;
-
-    @NotNull
     private String password;
+    private String program;
+    private String projectTitle;
 }
